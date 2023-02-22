@@ -8,24 +8,39 @@ const FAKE_USER_DATA = {
   cat: {
     name: 'Kitty Cat',
     bio: "I'm the coolest cat around. I'm the cat's meow!",
-    profilePictureUrl:
-      'https://content.codecademy.com/courses/React/react_lifecycle_cat_profile_picture.jpg',
-    friends: ['komodo'],
+    profilePictureUrl: 'https://content.codecademy.com/courses/React/react_lifecycle_cat_profile_picture.jpg',
+    friends: ['komodo', 'jaguar'],
   },
   dog: {
     name: 'Doggy Dog',
     bio: "I'm the doggity dog! Woof woof!",
-    profilePictureUrl:
-      'https://content.codecademy.com/courses/React/react_lifecycle_dog_profile_picture.jpg',
-    friends: ['komodo'],
+    profilePictureUrl: 'https://content.codecademy.com/courses/React/react_lifecycle_dog_profile_picture.jpg',
+    friends: ['komodo', 'jaguar'],
   },
   komodo: {
     name: 'Lizard Lady',
     bio: "I'm a Komodo dragon. You'll love me.",
-    profilePictureUrl:
-      'https://content.codecademy.com/courses/React/react_lifecycle_komodo_profile_picture.jpg',
-    friends: ['cat', 'dog'],
+    profilePictureUrl: 'https://content.codecademy.com/courses/React/react_lifecycle_komodo_profile_picture.jpg',
+    friends: ['cat', 'dog', 'jaguar'],
   },
+  jaguar: {
+    name: 'Shy and watchful',
+    bio: "I'm a Jaguar cat. be careful with my big heart.",
+    profilePictureUrl: 'https://i.ibb.co/v3QnMvQ/jaguar.jpg',
+    friends: ['komodo', 'chicken', 'arachnids', 'dog'],
+  },
+  chicken: {
+    name: 'Fearless agle',
+    bio: "I'm a Chicken-chick!. You wouldn't find a better",
+    profilePictureUrl: 'https://i.ibb.co/Vqgf0dt/chicken.jpg',
+    friends: ['komodo', 'dog', 'arachnids', 'jaguar'],
+  },
+  arachnids: {
+    name: 'Timid and docile',
+    bio: "I'm a Wolf Spider. always climbing to my goals",
+    profilePictureUrl: 'https://i.ibb.co/VmmPgrT/arachnids.jpg',
+    friends: ['cat', 'dog', 'jaguar'],
+  }
 };
 
 const timeoutByFetchId = new Map();
@@ -41,7 +56,7 @@ class Fetch {
 export function fetchUserData(username, callback) {
   if (!FAKE_USER_DATA.hasOwnProperty(username)) {
     throw new Error(
-      'Invalid username. Make sure it is "cat", "dog", or "komodo".'
+      'Invalid username. Make sure it is "cat", "dog", "komodo", "jaguar", "chicken" or "arachnids".'
     );
   }
 

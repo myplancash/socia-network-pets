@@ -190,7 +190,7 @@ function Directory(props) {
       'User directory'
     ),
     _react2.default.createElement(_Userlist.Userlist, {
-      usernames: ['dog', 'cat', 'komodo'],
+      usernames: ['dog', 'cat', 'komodo', 'jaguar', 'chicken', 'arachnids'],
       onChoose: props.onChoose
     })
   );
@@ -471,6 +471,24 @@ var FAKE_USER_DATA = {
     bio: "I'm a Komodo dragon. You'll love me.",
     profilePictureUrl: 'https://content.codecademy.com/courses/React/react_lifecycle_komodo_profile_picture.jpg',
     friends: ['cat', 'dog']
+  },
+  jaguar: {
+    name: 'Shy and watchful',
+    bio: "I'm a Jaguar cat. be careful with my big heart.",
+    profilePictureUrl: 'https://i.ibb.co/v3QnMvQ/jaguar.jpg',
+    friends: ['komodo', 'chicken', 'arachnids', 'dog'],
+  },
+  chicken: {
+    name: 'Fearless agle',
+    bio: "I'm a Chicken-chick!. You wouldn't find a better",
+    profilePictureUrl: 'https://i.ibb.co/Vqgf0dt/chicken.jpg',
+    friends: ['komodo', 'dog', 'arachnids', 'jaguar'],
+  },
+  arachnids: {
+    name: 'Timid and docile',
+    bio: "I'm a Wolf Spider. always climbing to my goals",
+    profilePictureUrl: 'https://i.ibb.co/VmmPgrT/arachnids.jpg',
+    friends: ['cat', 'dog', 'jaguar'],
   }
 };
 
@@ -486,7 +504,7 @@ var Fetch = function Fetch() {
 
 function fetchUserData(username, callback) {
   if (!FAKE_USER_DATA.hasOwnProperty(username)) {
-    throw new Error('Invalid username. Make sure it is "cat", "dog", or "komodo".');
+    throw new Error('Invalid username. Make sure it is "cat", "dog", "komodo", "jaguar", "chicken" or "arachnids"');
   }
 
   var fetch = new Fetch();
